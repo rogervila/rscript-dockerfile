@@ -6,7 +6,6 @@ RUN \
     apt-get update -y && \
     apt-get install -y libpq-dev r-cran-rjava && \
     Rscript -e 'install.packages("RPostgreSQL")' && \
-    Rscript -e 'install.packages("tidyverse")' && \
     Rscript -e 'install.packages("knitr")' && \
     Rscript -e 'install.packages("markdown")' && \
     Rscript -e 'install.packages("rmarkdown")' && \
