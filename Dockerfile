@@ -15,6 +15,7 @@ RUN \
     Rscript -e 'install.packages("webshot")' && \
     Rscript -e 'install.packages("lubridate")' && \
     Rscript -e 'install.packages("RJDBC")' && \
+    Rscript -e 'install.packages("dplyr")' && \
     Rscript -e 'install.packages("tidyverse")' && \
     Rscript -e 'download.file("http://s3.amazonaws.com/redshift-downloads/drivers/RedshiftJDBC41-1.1.9.1009.jar","RedshiftJDBC41-1.1.9.1009.jar")' && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
