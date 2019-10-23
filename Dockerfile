@@ -4,8 +4,8 @@ ENV DEBIAN_FRONTEND noninteractive
 
 RUN \
     apt-get update -y && \
-    apt-get install --no-install-recommends -y libssh2-1-dev libmariadbclient-dev libgit2-dev \
-    cargo libmagick++-dev libssl-dev libcurl4-openssl-dev libpq-dev r-cran-rjava unzip pandoc && \
+    apt-get install -y libssh2-1-dev libmariadbclient-dev libgit2-dev unzip pandoc pandoc-citeproc \
+    cargo libmagick++-dev libssl-dev libcurl4-openssl-dev libpq-dev r-cran-rjava && \
     Rscript -e 'install.packages("RPostgreSQL", dependencies=TRUE)' && \
     Rscript -e 'install.packages("knitr", dependencies=TRUE)' && \
     Rscript -e 'install.packages("markdown", dependencies=TRUE)' && \
@@ -26,4 +26,7 @@ RUN \
     chmod +x "/opt/pandoc/pandoc-citeproc" && \
     ln -s "/opt/pandoc/pandoc-citeproc" /usr/local/bin && \
     locale-gen en_US && \
+    mkdir -p /usr/lib/rstudio/bin/pandoc/ && \
+    ln -s /usr/bin/pandoc /usr/lib/rstudio/bin/pandoc/pandoc && \
+    ln -s /usr/bin/pandoc-citeproc /usr/lib/rstudio/bin/pandoc/pandoc-citeproc
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
