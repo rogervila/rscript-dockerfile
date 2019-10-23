@@ -15,6 +15,7 @@ RUN \
     Rscript -e 'install.packages("webshot", dependencies=TRUE)' && \
     Rscript -e 'install.packages("lubridate", dependencies=TRUE)' && \
     Rscript -e 'install.packages("RJDBC", dependencies=TRUE)' && \
+    Rscript -e 'install.packages("dplyr", dependencies=TRUE)' && \
     Rscript -e 'install.packages("tidyverse", dependencies=TRUE)' && \
     Rscript -e 'download.file("http://s3.amazonaws.com/redshift-downloads/drivers/RedshiftJDBC41-1.1.9.1009.jar","RedshiftJDBC41-1.1.9.1009.jar")' && \
     wget --quiet --no-check-certificate -O /tmp/pandoc.zip https://s3.amazonaws.com/rstudio-buildtools/pandoc-1.13.1.zip && \
