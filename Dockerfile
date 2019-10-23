@@ -18,13 +18,13 @@ RUN \
     Rscript -e 'install.packages("dplyr", dependencies=TRUE)' && \
     Rscript -e 'install.packages("tidyverse", dependencies=TRUE)' && \
     Rscript -e 'download.file("http://s3.amazonaws.com/redshift-downloads/drivers/RedshiftJDBC41-1.1.9.1009.jar","RedshiftJDBC41-1.1.9.1009.jar")' && \
-    wget --quiet --no-check-certificate -O /tmp/pandoc.zip https://s3.amazonaws.com/rstudio-buildtools/pandoc-1.13.1.zip && \
-    unzip -j /tmp/pandoc.zip "pandoc-1.13.1/linux/debian/x86_64/pandoc" -d /opt/pandoc && \
-    chmod +x /opt/pandoc/pandoc && \
-    ln -s /opt/pandoc/pandoc /usr/local/bin && \
-    unzip -j /tmp/pandoc.zip "pandoc-1.13.1/linux/debian/x86_64/pandoc-citeproc" -d /opt/pandoc && \
-    chmod +x "/opt/pandoc/pandoc-citeproc" && \
-    ln -s "/opt/pandoc/pandoc-citeproc" /usr/local/bin && \
+    #wget --quiet --no-check-certificate -O /tmp/pandoc.zip https://s3.amazonaws.com/rstudio-buildtools/pandoc-1.13.1.zip && \
+    #unzip -j /tmp/pandoc.zip "pandoc-1.13.1/linux/debian/x86_64/pandoc" -d /opt/pandoc && \
+    #chmod +x /opt/pandoc/pandoc && \
+    #ln -s /opt/pandoc/pandoc /usr/local/bin && \
+    #unzip -j /tmp/pandoc.zip "pandoc-1.13.1/linux/debian/x86_64/pandoc-citeproc" -d /opt/pandoc && \
+    #chmod +x "/opt/pandoc/pandoc-citeproc" && \
+    #ln -s "/opt/pandoc/pandoc-citeproc" /usr/local/bin && \
     locale-gen en_US && \
     mkdir -p /usr/lib/rstudio/bin/pandoc/ && \
     ln -s /usr/bin/pandoc /usr/lib/rstudio/bin/pandoc/pandoc && \
