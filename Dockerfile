@@ -5,7 +5,7 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN \
     apt-get update -y && \
     apt-get install --no-install-recommends -y libssh2-1-dev libmariadbclient-dev libgit2-dev \
-    cargo libmagick++-dev libssl-dev libcurl4-openssl-dev libpq-dev r-cran-rjava unzip && \
+    cargo libmagick++-dev libssl-dev libcurl4-openssl-dev libpq-dev r-cran-rjava unzip pandoc && \
     Rscript -e 'install.packages("RPostgreSQL", dependencies=TRUE)' && \
     Rscript -e 'install.packages("knitr", dependencies=TRUE)' && \
     Rscript -e 'install.packages("markdown", dependencies=TRUE)' && \
