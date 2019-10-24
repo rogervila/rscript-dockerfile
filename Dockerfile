@@ -23,7 +23,6 @@ RUN \
     echo "export LC_ALL=en_US.UTF-8" >> ~/.bashrc && \
     echo "export LANG=en_US.UTF-8" >> ~/.bashrc && \
     echo "export LANGUAGE=en_US.UTF-8" >> ~/.bashrc && \
-    source ~/.bashrc && \
     mkdir -p /usr/lib/rstudio/bin/pandoc/ && \
     ln -s /usr/bin/pandoc /usr/lib/rstudio/bin/pandoc/pandoc && \
     ln -s /usr/bin/pandoc-citeproc /usr/lib/rstudio/bin/pandoc/pandoc-citeproc && \
